@@ -1,0 +1,186 @@
+/***ПОДКЛЮЧЕНИЕ ЛОКАЛЬНОГО ШРИФРА********************/
+@font-face {
+	font-family: 'Norse Bold'; 
+	src: local('Norse Bold'),
+		url(/fonts/Norse-Bold.otf);
+}
+h2 {
+    font-size: 2.5vh;
+    margin-bottom: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+p {
+    font-size: 2.5vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+span {
+    font-size: 1.2vh;
+    display: block;
+    margin-top: 2vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/******************************************************/
+body {
+    margin: 0 18% 0 18%;
+    font-weight: normal;
+    background-color: black;
+    height: 100vh;
+    max-width: 100vw;
+  }
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+  }
+/***ОСНОВНОЙ (ВЕСЬ) БЛОК СТРАНИЦЫ****************************/
+section {
+    height: 100%;
+    width: 100%;
+    font-size: 0; /*Убираем зазора между inline блоками sidebar и content***/
+}
+/*****************************************************/
+/***ЛЕВЫЙ БЛОК СТРАНИЦЫ*******************************/
+.sidebar {
+    width: 35%;
+    height: 100%;
+    display: inline-block;
+    position: relative;
+}
+.sidebar-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1; /*Понижаем уровень видимости по оси Z*/
+    object-fit: cover;
+}
+.logo {
+    height: 20%;
+    width: 100%;
+    position: absolute;
+    top: 15%;
+/***ПРОЗРАЧНОСТЬ ЧЕРЕЗ OPACITY*************************/
+    /*background: black;*/
+    /*opacity: 0.5;*/
+}
+/***ПРОЗРАЧНОСТЬ ЧЕРЕЗ ДОПОЛНИТЕЛЬНЫЙ DIV************/
+.overlay {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* display: flex; */ /**Чтобы содержимое встало в линию*/
+}
+/********************************************************/
+.img-logo-div {
+    display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	overflow: auto;
+	width: 100%;
+	height: 100%;
+    font-size: 10vh;
+    color: white;
+    font-family: 'Norse Bold';
+}
+.logo-image {
+    width: min(10vh, 100%);
+	height: min(15vh, 100%);
+}
+/*****************************************************/
+/***ПРАВЫЙ БЛОК СТРАНИЦЫ******************************/
+.content {
+    width: 65%;
+    height: 100%;
+    display: inline-block;
+    background-color: white;
+    vertical-align: top;
+    font-size: 0; /******Убираем зазор между блоками в content********/
+    position: relative;
+}
+/********************************************************************/
+/*********************************************************************/
+.text-content {
+    width: 100%;
+    height: 35%;
+    background-color: rgb(246, 246, 246);
+    font-weight: bold;
+    padding: 5% 20% 5% 5%;
+    display: grid;
+    align-items: end;
+}
+/***РЕГИСТАРАЦИОННЫЕ ФОРМЫ****************************************/
+.reg-form {
+  /*  display: block;*/
+    width: 100%;
+    height: 35%;
+    background-color: white;
+    position: absolute;
+    top: 35%;
+    padding: 5%;
+    font-size: 0;
+}
+.reg-form-left {
+    width: 50%;
+    height: 80%;
+    float: left; 
+}
+.reg-form-right {
+    width: 50%;
+    height: 80%;
+    float: right;
+}
+/*********************************************************************/
+/***ФОРМА ВХОДА******************************************************/
+.log-in-form {
+    width: 100%;
+    height: 30%;
+    padding: 5%;
+    background-color: aqua;
+    position: absolute;
+    top: 70%;
+    background-color: rgb(246, 246, 246);
+    box-shadow: 0vh 1vh 1vh 0vh rgb(194, 194, 194) inset
+}
+/***************************************************************************/
+/***СТИЛЬ ФОРМ ВВОДА***************************************************************/
+input[type=text],[type=email], [type=password]{
+    width: 15vw;
+    height: 3vh;
+    border: 1px solid rgb(243, 241, 241);
+    outline:none;
+    border-radius: 0.5vh;
+ }
+input:hover {/********Анимация Input********************************/
+    border: 1px solid rgb(138, 138, 245);
+    width: 17vw;
+    box-shadow: 0.5vh 0.5vh 0.5vh rgb(190, 190, 190);
+    transition-duration: 0.4s;
+}
+input[type=password]:invalid {
+    border: 1px solid rgb(197, 1, 1);    
+}
+/*********************************************************************/
+/***Скрываем Laibel форм пароля при активации***********************/
+input[type=password]:valid ~ label[for="password"] {
+    display: none; 
+}
+input[type=password]:valid ~ label[for="password2"] {
+    display: none; 
+}
+label {
+    font-size: 0.7vw;
+    color: red;
+}
+/**************************************************************************/
+/****Кнопка********************************************/
+button {
+    height: 5vh;
+    width: 25vh;
+    color: white;
+    font-size: 2vh;
+    background-color: #596D48;
+    border-radius: 1vh;
+    border: none;
+    box-shadow: 0.5vh 0.5vh 0.5vh rgb(190, 190, 190)
+}
+/*****************************************************************/
